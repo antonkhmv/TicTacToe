@@ -1,7 +1,4 @@
-import math
-
 from player_interface import PlayerInterface
-import copy
 
 
 class AiInterface(PlayerInterface):
@@ -27,8 +24,11 @@ class AiInterface(PlayerInterface):
         Makes the next best known move.
         """
         AiInterface.states.clear()
-        print(f'Player {self.id+1} makes a move')
-        best_move = self.solve(PlayerInterface.current, True)
+        print(f'Player {self.id + 1} makes a move')
+        if self.size > 3 and all(map(lambda x: x == '.', PlayerInterface.current.to_string())):
+            best_move = [0, 0]
+        else:
+            best_move = self.solve(PlayerInterface.current, True)
         PlayerInterface.current.set_request(best_move[0], best_move[1], self.id)
 
     def solve(self, board, maximizing, depth=0):
@@ -53,26 +53,43 @@ class AiInterface(PlayerInterface):
         if board.to_string() in AiInterface.states:
             return AiInterface.states[board.to_string()]
 
-        score = -2*maximizing + 1
+        score = 0
+        best_score = (-2 * maximizing + 1) * 1000000
         best_move = None
+        bestest_move = None  # makes sure the ai chooses a winning move
+        bestestest_move = None  # makes sure the ai does not choose a losing move
 
         for i in range(self.size):
             for j in range(self.size):
+                # if current cell is empty
                 if board.cells[i][j] == 0:
-                    board.cells[i][j] = self.get_num() * (1-2*(depth % 2))
+                    # set it to the opposite of the current mark
+                    board.cells[i][j] = -self.get_num() * (1 - 2 * (depth % 2))
+                    # check for guaranteed losses
+                    if board.terminated() == -self.get_num():
+                        bestestest_move = (i, j)
+                    # set this cell to the current mark
+                    board.cells[i][j] = self.get_num() * (1 - 2 * (depth % 2))
                     if maximizing:
+                        # maximize the score
                         new_score = self.solve(board, False, depth + 1)
-                        if new_score > score or best_move is None:
+                        if new_score > best_score or best_move is None:
                             best_move = (i, j)
-                            score = new_score
+                            best_score = new_score
+                        if board.terminated() == self.get_num():
+                            bestest_move = (i, j)
                     else:
+                        # minimize the score
                         new_score = self.solve(board, True, depth + 1)
-                        if new_score < score or best_move is None:
+                        if new_score < best_score or best_move is None:
                             best_move = (i, j)
-                            score = new_score
+                            best_score = new_score
+                    score += new_score
                     board.cells[i][j] = 0
-                    if score == 2*maximizing-1:
-                        break
+        if bestestest_move is not None:
+            bestest_move = bestestest_move
+        if bestest_move is not None:
+            best_move = bestest_move
         AiInterface.states[board.to_string()] = score
         if depth == 0:
             return best_move
