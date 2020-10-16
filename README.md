@@ -1,9 +1,9 @@
 # Tic Tac Toe
 
 ## How to run: 
-Type in cmd
+Open cmd from the installation folder
 
-"{instl_folder}\venv\Scripts\python.exe" "{instl_folder}/main.py" {params}
+Then type: main.py <size> <amount> <P1> <P2>
 
 ## Parameters:
 size : int, range = [1, 5] - the size of the board
@@ -16,6 +16,6 @@ P2 : str, options = 'p', 's'- is Player 2 a computer or a person
 
 ## Screenshots
 
-[img1](!https://github.com/antonkhmv/TicTacToe/tree/master/img1.png)
+![img1](https://github.com/antonkhmv/TicTacToe/tree/master/img1.png)
 
-[img2](!https://github.com/antonkhmv/TicTacToe/tree/master/img2.png)
+![img2](https://github.com/antonkhmv/TicTacToe/tree/master/img2.png)
