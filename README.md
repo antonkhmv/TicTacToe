@@ -13,3 +13,9 @@ amount : int, range = [1, size] - the amount of marks to win the game
 P1 : str, options = 'p', 's' - is Player 1 a computer or a person
 
 P2 : str, options = 'p', 's'- is Player 2 a computer or a person
+
+## Screenshots
+
+[img1](!https://github.com/antonkhmv/TicTacToe/tree/master/img1.png)
+
+[img2](!https://github.com/antonkhmv/TicTacToe/tree/master/img2.png)
