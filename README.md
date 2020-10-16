@@ -16,6 +16,6 @@ P2 : str, options = 'p', 's'- is Player 2 a computer or a person
 
 ## Screenshots
 
-![img1](https://github.com/antonkhmv/TicTacToe/tree/master/img1.png)
+![img1](https://github.com/antonkhmv/TicTacToe/tree/master/1.png)
 
-![img2](https://github.com/antonkhmv/TicTacToe/tree/master/img2.png)
+![img2](https://github.com/antonkhmv/TicTacToe/tree/master/2.png)
