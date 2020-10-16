@@ -1,21 +1,25 @@
 # Tic Tac Toe
 
-## How to run: 
-Open cmd from the installation folder
+## Запуск: 
+Откройте коммандную строку из установочной папки
 
-Then type: main.py <size> <amount> <P1> <P2>
+Потом напишите: main.py <size> <amount> <P1> <P2>
 
-## Parameters:
-size : int, range = [1, 5] - the size of the board
+## Параметры:
+size : int, range = [1, 5] - размер доски
 
-amount : int, range = [1, size] - the amount of marks to win the game
+amount : int, range = [1, size] - сколько знаков необходимо поставить в ряд, чтобы выиграть
 
-P1 : str, options = 'p', 's' - is Player 1 a computer or a person
+P1 : str, options = 'p', 's' - ирок 1 - ИИ или человек
 
-P2 : str, options = 'p', 's'- is Player 2 a computer or a person
+P2 : str, options = 'p', 's'- ирок 2 - ИИ или человек
 
-## Screenshots
+## Скирншоты
+
+Ирок против Игрока
 
 ![img1](https://github.com/antonkhmv/TicTacToe/blob/master/img/1.png)
+
+Игрок против компьютера (доска 4x4)
 
 ![img2](https://github.com/antonkhmv/TicTacToe/blob/master/img/2.png)
