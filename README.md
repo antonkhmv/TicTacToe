@@ -16,11 +16,11 @@ P2 : str, значения = 'p', 's'- ирок 2 - ИИ или человек
 
 ## Скирншоты
 
-* ирок против игрока
+* Ирок против игрока
 
 ![img1](https://github.com/antonkhmv/TicTacToe/blob/master/img/1.png)
 
 
-* игрок против компьютера (доска 4x4)
+* Игрок против компьютера (доска 4x4)
 
 ![img2](https://github.com/antonkhmv/TicTacToe/blob/master/img/2.png)
